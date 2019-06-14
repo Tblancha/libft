@@ -6,7 +6,7 @@
 /*   By: tblancha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 22:04:23 by tblancha          #+#    #+#             */
-/*   Updated: 2019/06/14 00:43:39 by tblancha         ###   ########.fr       */
+/*   Updated: 2019/06/14 02:44:26 by tblancha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ size_t			ft_countword(char const *s, char c);
 int				ft_intlen(int n);
 char			*ft_realloc(char *ptr, size_t size);
 char			*ft_strrev(char *str);
+int				ft_pow(int nb, size_t exp);
 
 #endif
