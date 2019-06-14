@@ -6,7 +6,7 @@
 /*   By: tblancha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 02:31:39 by tblancha          #+#    #+#             */
-/*   Updated: 2019/06/14 02:48:29 by tblancha         ###   ########.fr       */
+/*   Updated: 2019/06/14 03:25:20 by tblancha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_pow(int nb, size_t exp)
 {
-	size_t	i;
-	int		result;
+	size_t		i;
+	int			result;
 
 	i = 1;
 	result = nb;
