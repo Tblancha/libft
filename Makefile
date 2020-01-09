@@ -6,7 +6,7 @@
 #    By: tblancha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/19 18:02:14 by tblancha          #+#    #+#              #
-#    Updated: 2019/06/14 03:47:42 by tblancha         ###   ########.fr        #
+#    Updated: 2020/01/09 03:07:22 by tblancha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,21 +80,34 @@ SRC =	ft_atoi.c \
 		ft_pow.c \
 		ft_printbit.c \
 
-OBJ =	$(SRC:.c=.o)
+OBJ =				$(SRC:.c=.o)
 
-HEADER = libft.h
+HEADER = 			libft.h
 
-$(NAME) :
-					gcc -Wall -Werror -Wextra -c $(SRC)
-					ar rc $(NAME) $(OBJ)
-					ranlib $(NAME)
+FLAG = 				-Wall -Wextra -Werror
 
-all : $(NAME)
+COUNT = 			0
+
+%.o:%.c $(HEADER)
+					@clear
+					@echo "$(COUNT)/64   $@"
+					@gcc -o $@ -c $< $(FLAG) -O
+					$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
+
+$(NAME) :			$(OBJ)
+					@echo "Creating libft.a . . ."
+					@ar rc $(NAME) $(OBJ)
+					@ranlib $(NAME)
+					@echo "Done"
+
+all : 				$(NAME)
 
 clean :
-					/bin/rm -f $(OBJ)
+					@rm -f $(OBJ)
+					@echo "Object removed"
 
-fclean : clean
-					/bin/rm -f $(NAME)
+fclean : 			clean
+					@rm -f $(NAME)
+					@echo "libft.a deleted"
 
-re : fclean all
+re : 				fclean all
